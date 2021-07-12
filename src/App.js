@@ -1,24 +1,19 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
+ import Projects from './Projects';
+ import SocialProfiles from './SocialProfiles';
+ import profile from './assets/profile.png';
 
 class App extends Component {
-    constructor() {
-        super();
-        this.state = { displayBio: false };
+   state = { displayBio: false};
 
-        console.log('Component this', this);
-
-        this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
-    }
-
-
-
-    toggleDisplayBio() {
+    toggleDisplayBio = () => {
         this.setState({ displayBio: !this.state.displayBio });
     }
 
     render() {
         return (
             <div>
+                <img src={profile} alt='profile' className='profile' />
                 <h1>Hello!</h1>
                 <p>My name is Kobe. I'm a frontend developer.</p>
                 <p>I'm always looking forward to working on meaningful projects</p>
@@ -36,6 +31,10 @@ class App extends Component {
                         </div>
                     )
                 }
+                <hr/>
+                <Projects/>
+                <hr/>
+                <SocialProfiles/>
             </div>
         )
     }
